@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 .header-with-line {
     display: inline-block;
     padding-bottom: 5px;

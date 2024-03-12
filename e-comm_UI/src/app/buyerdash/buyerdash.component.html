@@ -1,0 +1,22 @@
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav" mode="side">
+      <mat-nav-list>
+        <mat-list-item>
+          <button mat-button (click)="navigateTo('cart')">Cart</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button (click)="navigateTo('profile')">Profile</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button (click)="logout()">Logout</button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <!-- Your main content goes here -->
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
