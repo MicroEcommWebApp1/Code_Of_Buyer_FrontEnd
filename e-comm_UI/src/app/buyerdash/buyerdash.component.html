@@ -1,22 +1,66 @@
 
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav class="sidenav" mode="side">
-      <mat-nav-list>
-        <mat-list-item>
-          <button mat-button (click)="navigateTo('cart')">Cart</button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="navigateTo('profile')">Profile</button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="logout()">Logout</button>
-        </mat-list-item>
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <!-- Your main content goes here -->
-      <ng-content></ng-content>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<body>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div class="sidenav">
+  <a href="#">Add to Cart</a>
+  <a href="#">Order List</a>
+  <a href="#">Profile</a>
+  <a href="home">Logout</a>
+</div>
+
+
+
+<div class="cart-item">
+  <img src="assets\iphone 15.jpg" alt="Product Image" class="product-image">
+  <div>
+      <p>I phone 15</p>
+      <label for="quantity">Price: 900000/- </label> <br>
+      <label for="quantity">Quantity: </label>
+     
+      <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input"><br>
+     
+      <h5>-------------------------------------------</h5>
+      <button class="remove-button" onclick="removeItem()">Remove</button>
+  </div>
+</div>
+
+<div class="cart-item">
+  <img src="assets\iphone 15.jpg" alt="Product Image" class="product-image">
+  <div>
+      <p>I phone 15</p>
+      <label for="quantity">Price: 900000/- </label> <br>
+      <label for="quantity">Quantity: </label>
+     
+      <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input"><br>
+     
+      <h5>-------------------------------------------</h5>
+      <button class="remove-button" onclick="removeItem()">Remove</button>
+  </div>
+</div>
+<script>
+  // JavaScript functions to handle quantity changes and removal
+  function increaseQuantity() {
+      var quantityInput = document.getElementById('quantity');
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+  }
+
+  function decreaseQuantity() {
+      var quantityInput = document.getElementById('quantity');
+      if (parseInt(quantityInput.value) > 1) {
+          quantityInput.value = parseInt(quantityInput.value) - 1;
+      }
+  }
+
+  function removeItem() {
+      // Add logic to remove the item from the cart
+      var cartItem = document.querySelector('.cart-item');
+      cartItem.remove();
+  }
+</script>
+
+
+   

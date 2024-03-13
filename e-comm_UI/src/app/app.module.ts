@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MatListModule } from '@angular/material/list';
     
     AboutComponent,
          BuyerdashComponent,
+         RegisterComponent,
         
   ],
   imports: [
