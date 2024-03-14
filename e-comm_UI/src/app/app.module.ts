@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { RegisterComponent } from './register/register.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    HttpClientModule
 
   ],
   providers: [],

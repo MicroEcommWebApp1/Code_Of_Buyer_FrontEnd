@@ -9,13 +9,15 @@ import { BuyerDto } from '../buyer-dto';
 export class RegisterService {
 
   private baseURL = "http://localhost:8080/buyer/register";
+  buyerRegistration: any;
   constructor(private httpClient:HttpClient) { }
  
-  registerUser(buyerDto:BuyerDto):Observable<Object>{
+  registerUser(buyerDto:BuyerDto){
     return this.httpClient.post(`${this.baseURL}`,buyerDto);
 
-  
 
 
 }
+
 }
+
