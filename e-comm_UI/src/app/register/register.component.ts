@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from '../Services/register.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -47,12 +48,26 @@ register() {
                         
            },
       error: (e) =>{ if(e.status===200){
-        alert('Registration successful!'); 
+        //alert('Registration successful!'); 
+        Swal.fire({
+          title: "Good job!",
+          text: "Successfully Registered!",
+          icon: "success"
+        });
     this.router.navigate(['/login']);
     
   } else {
     // Form is invalid, display error messages
-       alert('Email already exsist, use other email or click on login.')}
+      //  alert('Email already exsist, use other email or click on login.')
+      
+       Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Email already Exsist!",
+        
+      
+      });
+    }
   },
 
 })

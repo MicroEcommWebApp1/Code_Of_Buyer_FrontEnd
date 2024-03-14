@@ -1,6 +1,11 @@
 import { Component ,OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
+import { LoginDto } from '../login-dto';
+
+import { RegisterService } from '../Services/register.service';
+import { HttpClient } from '@angular/common/http';
+import { LoginService } from '../Services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,25 +13,54 @@ import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  loginDto: LoginDto = new LoginDto();
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private loginService: LoginService,
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   login() {
-    // Here you can implement your login logic
-    // For example, you can check credentials and navigate to another page on successful login
-    if (this.loginForm.valid) {
-      // Assume login is successful, navigate to a dashboard page
-      this.router.navigate(['/dashboard']);
-    }
+    console.log(this.loginForm.value);
   }
-  loginuser() {
-    // Add your login logic here
+
+  loginUser() {
+    this.loginDto = this.loginForm.value;
+    this.loginService.loginUser(this.loginDto).subscribe(
+      (data: any) => {
+        // Assuming login is successful, navigate to dashboard
+        
+        alert("Login successful");
+        this.router.navigate(['/buyerdash']);
+      },
+      (error) => {
+        console.log(error);
+        if (error.status === 200) {
+          
+          alert("Login successful");
+          this.router.navigate(['/buyerdash']);
+          console.log("logged in");
+        } else {
+          alert("Login failed");
+          console.log("logged fail");
+        }
+      }
+    );
+  }
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 }
