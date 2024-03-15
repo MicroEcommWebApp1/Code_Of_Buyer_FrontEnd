@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from '../Services/register.service';
 import Swal from 'sweetalert2';
@@ -22,15 +22,27 @@ mobilenumber:any;
       this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, this.passwordValidator()]],
       // confirmPassword: ['', Validators.required],
-      mobilenumber: ['', Validators.required],
+      mobilenumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       // dob: ['', Validators.required],
       // agreeTerms: [false, Validators.requiredTrue]
     })
+
+   
    
 }
-get f() { return this.registerForm.controls; }
+get f() { return this.registerForm.controls; 
+}
+  passwordValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value: string = control.value;
+      const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(value);
+      const hasNumber = /\d/.test(value);
+      const isValid = value.length >= 6 && hasSpecialCharacter && hasNumber;
+      
+      return isValid ? null : { invalidPassword: true };
+    };}
 
 register() {
  // Handle registration logic here

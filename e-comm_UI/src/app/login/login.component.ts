@@ -6,6 +6,7 @@ import { LoginDto } from '../login-dto';
 import { RegisterService } from '../Services/register.service';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from '../Services/login.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -33,27 +34,37 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    this.loginDto = this.loginForm.value;
-    this.loginService.loginUser(this.loginDto).subscribe(
-      (data: any) => {
+    //this.loginDto = this.loginForm.value;
+    this.loginDto = this.loginForm.value
+    this.loginService.loginUser(this.loginDto).subscribe({
+      next: (data) =>{ 
         // Assuming login is successful, navigate to dashboard
         
         alert("Login successful");
         this.router.navigate(['/buyerdash']);
       },
-      (error) => {
-        console.log(error);
-        if (error.status === 200) {
+      error: (e) => {
+        console.log(e);
+        if (e.status === 200) {
           
-          alert("Login successful");
+          //alert("Login successful");
+          Swal.fire({
+            title: "Good job!",
+            text: "Successfully Loggedin!",
+            icon: "success"
+          });
           this.router.navigate(['/buyerdash']);
           console.log("logged in");
         } else {
-          alert("Login failed");
+         // alert("Login failed");
+         Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Invalid Credentials"});
           console.log("logged fail");
         }
       }
-    );
+  });
   }
 
   get email() {
@@ -64,3 +75,5 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 }
+
+

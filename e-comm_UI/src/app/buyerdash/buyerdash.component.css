@@ -3,11 +3,11 @@ body {
 }
 
 .sidenav {
-  height: 100%;
+  height: 102%;
   width: 200px;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  top: 0;
+  top: 87px;
   right: 0;
   background-color: #73034c;
   overflow-x: hidden;
@@ -30,7 +30,7 @@ body {
   margin-left: 200px; /* Same as the width of the sidenav */
 }
 
-@media screen and (max-height: 300px) {
+@media screen and (max-height: 400px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }

@@ -25,7 +25,7 @@
             <input type="email" id="email" class="form-control form-control"
               placeholder="Email address"
               formControlName="email" />
-              <span style="color: red;" *ngIf="f['email'] && f['email'].invalid && f['email'].touched">* Email is required</span>
+              <span style="color: red;" *ngIf="f['email'] && f['email'].invalid && f['email'].touched">* Enter Valid Email</span>
           </div>
  
           <!-- Password input -->
@@ -33,7 +33,10 @@
             <input type="password" id="password" class="form-control form-control"
               placeholder="Password"
               formControlName="password" />
-              <span style="color: red;" *ngIf="f['password'] && f['password'].invalid && f['password'].touched">* Password is not valid</span>
+              <span style="color: red;" *ngIf="f['password'] && f['password'].invalid && f['password'].touched">* Enter Valid Password<br>
+                                * Min length 6 characters<br>
+                                * Min one special characters<br>
+                                * Min one Number</span>
           </div>
  
          

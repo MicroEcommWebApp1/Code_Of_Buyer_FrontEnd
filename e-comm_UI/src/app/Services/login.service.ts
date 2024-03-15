@@ -22,8 +22,8 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
 
-  loginUser(loginDto: LoginDto): Observable<object> {
-    return this.httpClient.post('${this.baseUrl}', loginDto);
+  loginUser(loginDto: LoginDto) {
+    return this.httpClient.post(`${this.baseUrl}`, loginDto);
   }
 
 }
