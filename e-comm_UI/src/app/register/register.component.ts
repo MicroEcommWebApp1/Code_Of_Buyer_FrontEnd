@@ -20,7 +20,7 @@ mobilenumber:any;
   constructor(private formBuilder: FormBuilder,  private router: Router, private service: RegisterService) {
    
       this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, this.nameValidator()]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, this.passwordValidator()]],
       // confirmPassword: ['', Validators.required],
@@ -39,10 +39,19 @@ get f() { return this.registerForm.controls;
       const value: string = control.value;
       const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(value);
       const hasNumber = /\d/.test(value);
-      const isValid = value.length >= 6 && hasSpecialCharacter && hasNumber;
+      const isValid = value.length >= 6 && value.length <= 16 && hasSpecialCharacter && hasNumber;
       
       return isValid ? null : { invalidPassword: true };
     };}
+
+     nameValidator(): ValidatorFn {
+      return (control: AbstractControl): { [key: string]: any } | null => {
+        const value: string = control.value;
+        const isValid =  /^[a-zA-Z\s]+$/.test(value);
+    
+        return isValid ? null : { invalidName: true };
+      };
+    }
 
 register() {
  // Handle registration logic here

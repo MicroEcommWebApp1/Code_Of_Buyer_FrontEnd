@@ -15,7 +15,7 @@
             <input type="text" id="name" class="form-control form-control"
               placeholder="Name"
               formControlName="name"/>
-              <span style="color: red;" *ngIf="name && name.invalid && name.touched">* Name is not valid</span>
+              <span style="color: red;" *ngIf="f['name'] && f['name'].invalid && f['name'].touched">* Name is not valid</span>
  
           </div>
          
@@ -25,7 +25,8 @@
             <input type="email" id="email" class="form-control form-control"
               placeholder="Email address"
               formControlName="email" />
-              <span style="color: red;" *ngIf="f['email'] && f['email'].invalid && f['email'].touched">* Enter Valid Email</span>
+              <span style="color: red;" *ngIf="f['email'] && f['email'].invalid && f['email'].touched">* Enter Valid Email
+                                                    <br>* Email must contain @gmail.com</span>
           </div>
  
           <!-- Password input -->
