@@ -15,6 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BuyernavbarComponent } from './buyernavbar/buyernavbar.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
          BuyerdashComponent,
          RegisterComponent,
+         NavbarComponent,
+         BuyernavbarComponent,
         
   ],
   imports: [

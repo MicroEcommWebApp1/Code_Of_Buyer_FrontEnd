@@ -7,6 +7,7 @@ import { RegisterService } from '../Services/register.service';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from '../Services/login.service';
 import Swal from 'sweetalert2';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private loginService: LoginService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log(this.loginForm.value);
+    this.authService.login();
   }
 
   loginUser() {
