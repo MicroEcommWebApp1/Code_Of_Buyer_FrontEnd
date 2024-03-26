@@ -17,8 +17,14 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BuyernavbarComponent } from './buyernavbar/buyernavbar.component';
-import { ChatComponent } from './chat/chat.component';
-import { BuyerprofileComponent } from './buyerprofile/buyerprofile.component';
+import { ProfiledetailsComponent } from './profiledetails/profiledetails.component';
+import { UpdateComponent } from './update/update.component';
+import { AccountComponent } from './account/account.component';
+import { CartComponent } from './cart/cart.component';
+import { ForgotPasswordComponent } from './forgotpassword/forgotpassword.component';
+
+
+
 
 
 @NgModule({
@@ -26,14 +32,17 @@ import { BuyerprofileComponent } from './buyerprofile/buyerprofile.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    
     AboutComponent,
-         BuyerdashComponent,
-         RegisterComponent,
-         NavbarComponent,
-         BuyernavbarComponent,
-         ChatComponent,
-         BuyerprofileComponent,
+    BuyerdashComponent,
+    RegisterComponent,
+    NavbarComponent,
+    BuyernavbarComponent,
+    ProfiledetailsComponent,
+    UpdateComponent,
+    AccountComponent,
+    CartComponent,
+    ForgotPasswordComponent
+   
         
   ],
   imports: [

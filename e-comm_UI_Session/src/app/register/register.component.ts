@@ -3,8 +3,6 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { Router } from '@angular/router';
 import { RegisterService } from '../Services/register.service';
 import Swal from 'sweetalert2';
-
-import { UserService } from '../user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,18 +13,18 @@ export class RegisterComponent {
 name: any;
 email: any;
 password: any;
-mobilenumber:any;
+phonenumber:any;
  
 // confirmPassword: any;
  
-  constructor(private formBuilder: FormBuilder,  private router: Router, private service: RegisterService, private userService:UserService) {
-      
+  constructor(private formBuilder: FormBuilder,  private router: Router, private service: RegisterService) {
+   
       this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, this.nameValidator()]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, this.passwordValidator()]],
       // confirmPassword: ['', Validators.required],
-      mobilenumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      phonenumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       // dob: ['', Validators.required],
       // agreeTerms: [false, Validators.requiredTrue]
     })
@@ -56,12 +54,6 @@ get f() { return this.registerForm.controls;
     }
 
 register() {
-
-  this.userService.currentUser = {
-    name: this.registerForm.value.name, // Set the name of the logged-in user
-    email: this.registerForm.value.email, // Set the email of the logged-in user
-    mobilenumber: this.registerForm.value.mobilenumber//
-  };
  // Handle registration logic here
   Object.values(this.registerForm.controls).forEach(control => {
     control.markAsTouched();

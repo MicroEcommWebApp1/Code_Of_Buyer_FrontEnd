@@ -1,0 +1,32 @@
+
+<app-buyernavbar></app-buyernavbar>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="page-profile">
+<div class="profile-card">
+ <div class="profile-infoLabel">Profile Details</div><hr>
+ <div *ngIf="buyerDto">
+  <p>Name: {{ buyerDto.name }}</p>
+  <p>Email: {{ buyerDto.email }}</p>
+  <p>Phone Number: {{ buyerDto.phonenumber }}</p>
+</div><br>
+     <!-- <tbody>
+        <tr *ngFor="let buyerDto of buyerDetails">
+          <td>Full Name</td>
+          <td>{{ buyerDto.name }}</td>
+        </tr>
+        <tr *ngFor="let buyerDto of buyerDetails">
+            <td>EmailID</td>
+            <td>{{ buyerDto.email }}</td>
+        </tr>
+        <tr *ngFor="let buyerDto of buyerDetails">
+          <td>PhoneNumber</td>
+          <td>{{ buyerDto.phonenumber }}</td>
+        </tr>
+     </tbody>
+    </table> -->
+    <div class="profile-editButton"> 
+      <button type="button" class="btn btn-primary" style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onEdit()">Edit</button>
+    </div>
+    </div>  
+    </div>

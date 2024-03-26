@@ -5,8 +5,13 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { BuyerdashComponent } from './buyerdash/buyerdash.component';
 import { RegisterComponent } from './register/register.component';
-import { ChatComponent } from './chat/chat.component';
-import { BuyerprofileComponent } from './buyerprofile/buyerprofile.component';
+import { ProfiledetailsComponent } from './profiledetails/profiledetails.component';
+import { UpdateComponent } from './update/update.component';
+import { AccountComponent } from './account/account.component';
+import { CartComponent } from './cart/cart.component';
+import { ForgotPasswordComponent } from './forgotpassword/forgotpassword.component';
+
+
 
 const routes: Routes = [{ path: '', component: HomeComponent },
 { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,8 +20,12 @@ const routes: Routes = [{ path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   {path: 'buyerdash', component: BuyerdashComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'chat', component: ChatComponent},
-  {path: 'buyerprofile', component:BuyerprofileComponent},
+  {path: 'profile', component:ProfiledetailsComponent},
+  { path: 'update', component: UpdateComponent },
+  {path: 'account', component: AccountComponent},
+  {path: 'cart', component: CartComponent},
+  {path:'forgotpassword', component: ForgotPasswordComponent}
+
 ];
 
 @NgModule({

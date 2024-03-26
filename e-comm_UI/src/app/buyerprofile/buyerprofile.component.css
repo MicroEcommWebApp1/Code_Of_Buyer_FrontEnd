@@ -1,0 +1,98 @@
+.profile-container{
+    background-color: rgb(186, 218, 231);
+    padding: 20px;
+    width: 500px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(239, 241, 239, 0.3);
+    margin: 0 auto;
+    border:2px solid whitesmoke;
+    border-radius: 80px;
+}
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqvhjvqJYaqPxAL8eyw1blT26XRIf5T_6S9A&usqp=CAU');
+  background-size: cover; 
+  filter: blur(5px); 
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: 30% auto; 
+    flex-direction: column;
+  }
+  
+  .profile-info label {
+    margin-bottom: 5px;
+  }
+  
+  .profile-info input,
+  .profile-info select {
+    width: 100%;
+    padding: 8px;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .profile-info label {
+    flex-basis: 30%; 
+    text-align: left;/* Adjust the width as needed */
+  }
+  
+  .profile-info input,
+  .profile-info select {
+    flex-basis: 70%; /* Adjust the width as needed */
+  }
+  
+  .profile-actions {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .profile-actions button {
+    padding: 10px 20px;
+    background-color: #78b1ed;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .saveProfile{
+    background-color: #3f8fe3;
+    border-radius: 5px;
+    border:2px solid #fff;
+    color: #fff;
+  }
+  .profile-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  img{
+    height:53px;
+    width:auto;
+  }
+  nav {
+    background-color:#031728;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 40px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  

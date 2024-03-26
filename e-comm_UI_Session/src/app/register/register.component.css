@@ -1,0 +1,10 @@
+.register{
+    color: #322a91;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width: 450px) {
+    .h-custom {
+    height: 100%;
+    }
+}
+

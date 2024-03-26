@@ -1,0 +1,24 @@
+img{
+    width: 120px;
+    height: 60px;
+ 
+}
+ 
+.nav-link
+{
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: x-large;
+    margin: 20px;
+   
+   
+}
+.container-fluid
+{
+    background-color: #73034c;
+    width: 100%;
+    height: 80px;
+   
+ 
+}

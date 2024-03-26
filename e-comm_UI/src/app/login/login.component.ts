@@ -2,6 +2,7 @@ import { Component ,OnInit} from '@angular/core';
 import {  Router } from '@angular/router';
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { LoginDto } from '../login-dto';
+import { UserService } from '../user.service';
 
 import { RegisterService } from '../Services/register.service';
 import { HttpClient } from '@angular/common/http';
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private loginService: LoginService,
     private authService: AuthService,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,10 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     //this.loginDto = this.loginForm.value;
+    // this.userService.currentUser = {
+    //   name: this.loginForm.value.name, // Set the name of the logged-in user
+    //   email: this.loginForm.value.email // Set the email of the logged-in user
+    // };
     this.loginDto = this.loginForm.value
     this.loginService.loginUser(this.loginDto).subscribe({
       next: (data) =>{ 
@@ -56,7 +62,7 @@ export class LoginComponent implements OnInit {
             text: "Successfully Loggedin!",
             icon: "success"
           });
-          this.router.navigate(['/buyerdash']);
+          this.router.navigate(['/buyerprofile']);
           console.log("logged in");
         } else {
          // alert("Login failed");

@@ -1,0 +1,35 @@
+<app-buyernavbar></app-buyernavbar>
+<main>
+    <div class="cart-container">
+      <h1>Your Shelby Cart</h1>
+      <div class="cart-items">
+        <div class="cart-item" *ngFor="let item of cartItems; let i = index">
+          <img [src]="item.product.image" alt="{{ item.product.name }}">
+          <div class="item-details">
+            <h2>{{ item.product.name }}</h2>
+            <p class="price">{{ item.product.price | currency: 'INR' }}</p>
+          </div>
+          <div class="quantity-container">
+            <button (click)="decrementQuantity(i)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="incrementQuantity(i)">+</button>
+          </div>
+          <div class="buttons-container"(click)="removeFromCart(i)">
+            <button class="button">
+               <div class='icon'>
+                  <i class='fa fa-trash-o'></i>
+                </div>
+                <div class='text'>
+                  <span>remove</span>
+                </div>
+              </button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="cartItems.length === 0">Your cart is empty</div>
+      <div class="total-container">
+        <p class="cart-total">Total Cart Value: {{ total | currency:'INR' }}</p>
+    </div>
+    </div>
+    <button class="checkout-button" (click)="proceedToCheckout()">Proceed to Checkout</button>
+   </main>

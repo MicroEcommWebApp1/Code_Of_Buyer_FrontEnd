@@ -1,0 +1,67 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-box {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .profile-saveButton {
+    text-align: center;
+  }
+  
+  .save-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .save-button:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Styling for the button */
+  .btn {
+    background-color: #1e98b7;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #b2e5f6;
+  }
+
+  #phonenumber{
+    padding: 10px;
+    border: 1px solid #f4e5e5;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }

@@ -1,0 +1,62 @@
+<header>
+   
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a routerLink="/mainpage"><img src="assets\logo.png" alt="Logo" /></a>
+      </div>
+      <div class="navbar-center">
+        <input type="text" class="search-bar" placeholder="Search...">
+      </div>
+      
+      
+      <div class="navbar-right">
+        <a routerLink="/cart"><i class="bi bi-cart"></i></a>
+        
+        <a routerLink="/buyer-dash"><i class="bi bi-person"></i></a>
+        
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="background-image"></div>
+  
+<div class="profile-container">
+    <h2>Chat & Support</h2>
+    <!-- <form [formGroup]="profileForm" (ngSubmit)="saveProfile()"> -->
+      <div class="form-group">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" formControlName="name" value="Venu Gopal Alapati" readonly>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" formControlName="email"  value="venugopalalapati123@gmail.com" readonly>
+      </div>
+      <!-- <div class="form-group">
+        <label for="gender">Gender:</label><br>
+        <select id="gender" formControlName="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div> -->
+      <div class="form-group">
+        <label for="phone">Mobile Number:</label><br>
+        <input type="tel" id="phone" formControlName="phone" value="8688965686" readonly>
+
+        
+      </div>
+      <br>
+
+
+      <label for="phone">Description:</label><br>
+  <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Describe your issue in detail, so that our support team will understand and solve the issue as soon as possible"></textarea>
+  <br>
+
+    
+      <button class="saveProfile"type="submit">Send</button>
+    <!-- </form> -->
+  </div>
+  
+
+ 
