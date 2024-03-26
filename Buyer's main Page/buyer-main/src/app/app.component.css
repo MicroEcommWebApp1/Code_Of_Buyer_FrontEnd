@@ -1,0 +1,36 @@
+#header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding :20px 80px;
+    background:#E3E6F3;
+    box-shadow: 0 5px 15px rgba(0,0, 0,0.06);
+    z-index:999;
+    position:sticky;
+    top:0;
+    left:0;
+
+}
+.logo {
+    width: 70px; /* Adjust width as needed */
+    height: 50px; /* Maintain aspect ratio */
+    background-color: aliceblue;
+}
+#navbar {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding :0 20px;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    transition: 0.3s ease;
+}

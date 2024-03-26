@@ -1,0 +1,46 @@
+.section-p1{
+    padding:40px 80px;
+   
+}
+
+footer{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background:#E3E6F3;
+}
+
+.logo {
+    width: 70px; /* Adjust width as needed */
+    height: 50px; /* Maintain aspect ratio */
+    background-color: aliceblue;
+  
+}
+
+footer .col{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: bottom 20px;
+}
+
+footer h4{
+    font-size:14px;
+    padding-bottom: 20px;
+}
+footer p{
+    font-size:13px;
+    padding-bottom: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration:none;
+    color:#222;
+    margin-bottom:10px;
+}
+
+footer .copyright{
+    width:100%;
+    text-align: center;
+}
