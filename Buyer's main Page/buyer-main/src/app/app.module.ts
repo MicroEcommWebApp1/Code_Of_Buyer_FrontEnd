@@ -19,6 +19,7 @@ import { BoatComponent } from './components/boat/boat.component';
 import { NoiseComponent } from './components/noise/noise.component';
 import { SareeComponent } from './components/saree/saree.component';
 import {MatSelectModule} from '@angular/material/select';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {MatSelectModule} from '@angular/material/select';
        SamsungComponent,
        BoatComponent,
        NoiseComponent,
-       SareeComponent
+       SareeComponent,
+       AboutComponent
 
   ],
   imports: [

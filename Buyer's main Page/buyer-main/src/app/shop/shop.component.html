@@ -48,11 +48,11 @@
   
     <div class="pro-container">
         <div class="pro"  *ngFor="let item of data" >
-            <a routerLink="/productdetail"><img src="../../assets/f1.jpg"></a>
+            <img routerLink="/productdetail/{{item.product_id}}" src="{{item.productThumbnail}}" alt="image" >
             <div class="des">
                 <span>{{item.name}}</span>
                 <h5>{{item.price}}</h5>
-                <button routerLink="/productdetail" class="btn btn-sm btn-dark mt-2"><i class="fa fa-solid fa-info mr-2"></i>&nbsp;view
+                <button routerLink="/productdetail/{{item.product_id}}" class="btn btn-sm btn-dark mt-2"><i class="fa fa-solid fa-info mr-2"></i>&nbsp;view
                     details</button><br>
                 <button class="btn btn-sm btn-warning mt-2"><i class="fa fa-cart-plus mr-2"></i>&nbsp;Add to
                     Cart</button>

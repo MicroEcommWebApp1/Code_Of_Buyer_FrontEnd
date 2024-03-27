@@ -12,6 +12,7 @@ import { BoatComponent } from './components/boat/boat.component';
 import { ApplephoneComponent } from './components/applephone/applephone.component';
 import { NoiseComponent } from './components/noise/noise.component';
 import { SamsungComponent } from './components/samsung/samsung.component';
+import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
 
   },
   {
-    path:'productdetail',
+    path:'productdetail/:product_id',
     component:ProductDetailComponent
   },
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path:'samsung',
     component:SamsungComponent
+  },
+  {
+    path:'about',
+    component:AboutComponent
   },
 
 ];

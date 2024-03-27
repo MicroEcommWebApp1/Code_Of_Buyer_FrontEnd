@@ -11,6 +11,10 @@ export class GetallproductsService {
 
   constructor(private http:HttpClient) { }
 
+  public getProductById(product_id:any){
+    return this.http.get<Product[]>("http://localhost:8080/products/getAllProducts/"+product_id);
+  }
+
   public getAllProducts(){
     return this.http.get<Product[]>("http://localhost:8080/products/getAllProducts");
   }
