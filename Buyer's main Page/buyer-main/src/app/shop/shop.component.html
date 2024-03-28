@@ -1,0 +1,60 @@
+<section id="page-header">
+    <h2>#stayHome</h2>
+    <p>Save more with coupons upto 70% Off!</p>
+</section>
+<!--Header Section-->
+<section>
+    <ul id="navbar">
+        <li><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </li>
+            <li><button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button></li>
+    </ul>
+</section>
+
+<!--display the product content-->
+<!--<div class="container-fluid" style="background-color: aliceblue;">
+    <div class="row">
+        <div class="col-md-2 mt-3" *ngFor="let item of data">
+            <div class="card mt-2">
+                <div class="card-body">
+                    <div class="card-img-actions">
+                        <img  routerLink="/productdetail"src="{{item.productThumbnail}}" class="card-img img-fluid">
+                    </div>
+                </div>
+
+                <div class="card-body bg-light text-center">
+                    <div class="font-weight-semibold">
+                        <a class="text-default" routerLink="">{{item.name}}</a>
+                    </div>
+                    <h3 class="mb-0 font-weight-semibold">{{item.price}}</h3>
+                    <button routerLink="/productdetail" class="btn btn-sm btn-dark mt-2"><i class="fa fa-solid fa-info mr-2"></i>&nbsp;view
+                        details</button>
+                    <button class="btn btn-sm btn-warning mt-2"><i class="fa fa-cart-plus mr-2"></i>&nbsp;Add to
+                        Cart</button>
+                </div>
+            </div>
+        </div>
+
+
+       
+    </div>
+</div>-->
+
+
+<section id="product1" class="section-p1">
+    <h2>All Featured Products</h2>
+  
+    <div class="pro-container">
+        <div class="pro"  *ngFor="let item of data" >
+            <img routerLink="/productdetail/{{item.product_id}}" src="{{item.thumbnail}}" alt="image" >
+            <div class="des">
+                <span>{{item.name}}</span>
+                <h5>₹{{item.price}}</h5>
+                <button routerLink="/productdetail/{{item.product_id}}" class="btn btn-sm btn-dark mt-2"><i class="fa fa-solid fa-info mr-2"></i>&nbsp;view
+                    details</button><br>
+                <button class="btn btn-sm btn-warning mt-2"><i class="fa fa-cart-plus mr-2"></i>&nbsp;Add to
+                    Cart</button>
+            </div>
+        </div>
+        </div>
+        </section>
