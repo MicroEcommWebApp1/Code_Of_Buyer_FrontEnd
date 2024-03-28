@@ -20,6 +20,13 @@ import { NoiseComponent } from './components/noise/noise.component';
 import { SareeComponent } from './components/saree/saree.component';
 import {MatSelectModule} from '@angular/material/select';
 import { AboutComponent } from './about/about.component';
+import { ApparelComponent } from './components/apparel/apparel.component';
+import { GadgetsComponent } from './components/gadgets/gadgets.component';
+import { ProductDetail2Component } from './product-detail2/product-detail2.component';
+import { ApparelHeaderComponent } from './components/apparel-header/apparel-header.component';
+import { GadgetsHeaderComponent } from './components/gadgets-header/gadgets-header.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 
 @NgModule({
@@ -39,14 +46,20 @@ import { AboutComponent } from './about/about.component';
        BoatComponent,
        NoiseComponent,
        SareeComponent,
-       AboutComponent
+       AboutComponent,
+       ApparelComponent,
+       GadgetsComponent,
+       ProductDetail2Component,
+       ApparelHeaderComponent,
+       GadgetsHeaderComponent,
+     
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,MatSelectModule
   ],
-  providers: [],
+  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

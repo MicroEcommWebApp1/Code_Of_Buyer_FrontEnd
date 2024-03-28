@@ -3,15 +3,13 @@
     <p>Save more with coupons upto 70% Off!</p>
 </section>
 <!--Header Section-->
-<div class="container-fluid" style="background-color: aliceblue;">
-    <div class="row justify-content-center text-center">
-        <div class="col-md-8 col-lg-6">
-            <div class="header">
-                <h3 styel="color:#white;font-size:23px">Popular ECommerce Products</h3>
-            </div>
-        </div>
-    </div>
-</div>
+<section>
+    <ul id="navbar">
+        <li><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </li>
+            <li><button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button></li>
+    </ul>
+</section>
 
 <!--display the product content-->
 <!--<div class="container-fluid" style="background-color: aliceblue;">
@@ -48,10 +46,10 @@
   
     <div class="pro-container">
         <div class="pro"  *ngFor="let item of data" >
-            <img routerLink="/productdetail/{{item.product_id}}" src="{{item.productThumbnail}}" alt="image" >
+            <img routerLink="/productdetail/{{item.product_id}}" src="{{item.thumbnail}}" alt="image" >
             <div class="des">
                 <span>{{item.name}}</span>
-                <h5>{{item.price}}</h5>
+                <h5>₹{{item.price}}</h5>
                 <button routerLink="/productdetail/{{item.product_id}}" class="btn btn-sm btn-dark mt-2"><i class="fa fa-solid fa-info mr-2"></i>&nbsp;view
                     details</button><br>
                 <button class="btn btn-sm btn-warning mt-2"><i class="fa fa-cart-plus mr-2"></i>&nbsp;Add to

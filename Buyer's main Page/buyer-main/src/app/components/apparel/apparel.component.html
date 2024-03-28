@@ -1,11 +1,11 @@
 <app-apparel-header></app-apparel-header>
 
+
 <section id="product1" class="section-p1">
-    <h2>DENIM JEANS!!</h2>
-  
-    <div class="pro-container">
-        <div class="pro" *ngFor="let item of data" >
-            <a routerLink="/productdetail/{{item.product_id}}"><img src="{{item.thumbnail}}"></a>
+   <h4>Latest Collection!!</h4>
+ <div class="pro-container">
+        <div class="pro"  *ngFor="let item of data" >
+            <img routerLink="/productdetail/{{item.product_id}}" src="{{item.thumbnail}}" alt="image" >
             <div class="des">
                 <span>{{item.name}}</span>
                 <h5>{{item.price}}</h5>
@@ -16,4 +16,4 @@
             </div>
         </div>
         </div>
-        </section>
+     </section>

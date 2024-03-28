@@ -16,6 +16,32 @@
     color:aliceblue;
 }
 
+#navbar {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding :10px 20px;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    transition: 0.3s ease;
+}
+
+#navbar li input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid #085f35;
+    border-radius: 5px;
+}
 #product1{
     text-align: center;
 }

@@ -25,8 +25,8 @@ export class ShopComponent implements OnInit{
         return products.map((product: Product) => {
           // Transform the product using both functions
           const productWithImages = this.imageProcessingService.createImages(product);
-          const productWithThumbnail = this.imageProcessingService.createImage(productWithImages);
-          return productWithThumbnail;
+         // const productWithThumbnail = this.imageProcessingService.createImage(productWithImages);
+          return productWithImages;
         });
       })
     )

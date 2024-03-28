@@ -9,7 +9,7 @@ export interface Product{
     category : String,
     subcategory1:String,
     subcategory2 : String,
-    productThumbnail:FileHandle[],
+    thumbnail:String,
     productImages: FileHandle[],
 
 }

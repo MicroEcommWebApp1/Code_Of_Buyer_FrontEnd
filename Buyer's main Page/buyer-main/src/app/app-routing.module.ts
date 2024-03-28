@@ -13,6 +13,9 @@ import { ApplephoneComponent } from './components/applephone/applephone.componen
 import { NoiseComponent } from './components/noise/noise.component';
 import { SamsungComponent } from './components/samsung/samsung.component';
 import { AboutComponent } from './about/about.component';
+import { ApparelComponent } from './components/apparel/apparel.component';
+import { GadgetsComponent } from './components/gadgets/gadgets.component';
+import { ProductDetail2Component } from './product-detail2/product-detail2.component';
 
 
 const routes: Routes = [
@@ -32,6 +35,10 @@ const routes: Routes = [
   {
     path:'productdetail/:product_id',
     component:ProductDetailComponent
+  },
+  {
+    path:'productdetail2/:product_id',
+    component:ProductDetail2Component
   },
   {
     path:'saree',
@@ -69,11 +76,14 @@ const routes: Routes = [
     path:'about',
     component:AboutComponent
   },
+  {path:'apparel',component:ApparelComponent},
+  {path:'gadgets',component:GadgetsComponent},
+ 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

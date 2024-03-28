@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../model/product.model';
 import { GetallproductsService } from '../service/getallproducts.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../model/product.model';
-import { map } from 'rxjs';
 import { ImageProcessingService } from '../service/image-processing.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  selector: 'app-product-detail2',
+  templateUrl: './product-detail2.component.html',
+  styleUrls: ['./product-detail2.component.css']
 })
-export class ProductDetailComponent implements OnInit{
+export class ProductDetail2Component implements OnInit {
   product!:Product;
   constructor(private service:GetallproductsService, private active:ActivatedRoute, private imageProcessingService:ImageProcessingService){}
   ngOnInit(): void {
@@ -30,7 +28,4 @@ export class ProductDetailComponent implements OnInit{
     )
   }
 
-
 }
-
-
