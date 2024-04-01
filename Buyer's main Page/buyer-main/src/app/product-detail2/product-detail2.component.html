@@ -1,20 +1,15 @@
 <section id="prodetails" class="section-p1">
-    <div class="single-pro-image">
+    
+    <div class="single-pro-image"  >
         <img src="{{product.thumbnail}}" width="100%" id="MainImg" alt="">
 
-        <div class="small-img-group" >
-            <div class="small-img-col">
-                <img src="../../assets/f1.jpg" width="100%" id="SmallImg" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="../../assets/f1.jpg" width="100%" id="SmallImg" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="../../assets/f1.jpg" width="100%" id="SmallImg" alt="">
+        <div class="small-img-group"  >
+            <div class="small-img-col"  *ngFor="let image of product.productImages" >
+                <img [src]="image.url"width="100%" alt="">
             </div>
             
-            </div>
-    </div>
+            
+    </div></div>
 
     <div class="single-pro-details">
         <h6>{{product.subcategory1}}:{{product.subcategory2}}</h6>
