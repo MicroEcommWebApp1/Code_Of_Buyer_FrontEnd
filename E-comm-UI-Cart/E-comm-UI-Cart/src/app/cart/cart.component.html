@@ -1,0 +1,53 @@
+<!-- cart.component.html -->
+
+<!-- <div class="cart-item" *ngFor="let item of cartItems; let i = index">
+    <img [src]="item.thumbnail" alt="Product Thumbnail">
+    <h3>{{ item.name }}</h3>
+    <h5>Price: ₹{{ item.price * item.quantity }}</h5>
+    <div class="quantity">
+      <button (click)="decrementQuantity(item)">-</button>
+      <span>{{ item.quantity }}</span>
+      <button (click)="incrementQuantity(item)">+</button>
+    </div> -->
+    <!-- <button class="remove-btn" (click)="removeFromCart(i)">Remove</button> -->
+  <!-- </div>
+  <div class="total-price-section">
+    <p>Total Price: ₹{{ getTotalPrice() }}</p>
+  </div>
+  <button class="proceed-to-checkout-btn" (click)="proceedToCheckout()">Proceed to Checkout</button> -->
+ <div class="cart-container">
+  <div class="cart-item">
+    <section id="cart" class="sectiom-p1">
+      <table width="100%">
+        <thead>
+          <tr>
+            <td>Image</td>
+            <td>Product</td>
+            <td>Price</td>
+            <td>quantity</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+     
+        <tbody>
+          <tr  *ngFor="let item of cartItems; let i = index" >
+            <td> <img [src]="item.thumbnail" alt="Product Thumbnail"></td>
+            <td><h6>{{ item.name }}</h6></td>
+            <td><h6>Price: ₹{{ item.price}}</h6></td>
+            <td>
+              <button class="quantity-btn" (click)="decrementQuantity(item)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button class="quantity-btn" (click)="incrementQuantity(item)">+</button>
+            </td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteCartItem(i)" >Delete</button></td>
+            <!-- <td><button class="delete-btn" (click)="deleteCartItem(i)">Delete</button></td> -->
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
+<div class="total-price-section">
+  <p>Total Price: ₹{{ getTotalPrice() }}</p>
+</div>
+<button class="proceed-to-checkout-btn" routerLink="/checkout" (click)="proceedToCheckout()">Proceed to Checkout</button>

@@ -10,6 +10,8 @@ import { UpdateComponent } from './update/update.component';
 import { AccountComponent } from './account/account.component';
 import { CartComponent } from './cart/cart.component';
 import { ForgotPasswordComponent } from './forgotpassword/forgotpassword.component';
+import { PaymentComponent } from './payment/payment.component';
+
 
 
 
@@ -24,7 +26,8 @@ const routes: Routes = [{ path: '', component: HomeComponent },
   { path: 'update', component: UpdateComponent },
   {path: 'account', component: AccountComponent},
   {path: 'cart', component: CartComponent},
-  {path:'forgotpassword', component: ForgotPasswordComponent}
+  {path:'forgotpassword', component: ForgotPasswordComponent},
+  {path: 'payment', component:PaymentComponent}
 
 ];
 

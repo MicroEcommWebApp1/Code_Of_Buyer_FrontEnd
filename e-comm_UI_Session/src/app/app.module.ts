@@ -22,6 +22,7 @@ import { UpdateComponent } from './update/update.component';
 import { AccountComponent } from './account/account.component';
 import { CartComponent } from './cart/cart.component';
 import { ForgotPasswordComponent } from './forgotpassword/forgotpassword.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -41,7 +42,8 @@ import { ForgotPasswordComponent } from './forgotpassword/forgotpassword.compone
     UpdateComponent,
     AccountComponent,
     CartComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    PaymentComponent
    
         
   ],
