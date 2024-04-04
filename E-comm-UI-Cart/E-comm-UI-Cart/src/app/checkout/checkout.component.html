@@ -1,4 +1,4 @@
-<app-buyernavbar></app-buyernavbar>
+<!-- <app-buyernavbar></app-buyernavbar>
 
 
   <div class="background-image"></div>
@@ -45,4 +45,67 @@
     </form>
   </div>
   
+   -->
+
+   <div class="total-cart-value">
+    <h2>Total Cart Value: ₹{{ totalCartValue }}</h2>
+  </div>
   
+   <div class="container">
+    <h2>Checkout</h2>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label>Expiry Date:</label>
+        <div class="expiry-date">
+          <select name="expiryMonth" formControlName="expiryMonth"  id="expiryMonth" required>
+            <option value="" disabled selected>Select Month</option>
+            <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+          </select>
+          <select name="expiryYear" formControlName="expiryYear" id="expiryYear" required>
+            <option value="" disabled selected>Select Year</option>
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" class="form-control" formControlName="cardNumber" id="cardNumber" placeholder="Enter Debit/credit cardNumber">
+      </div>
+
+      <div class="form-group">
+        <label for="CVV">CVV:</label>
+        <input type="text" class="form-control" formControlName="CVV" id="CVV" placeholder="Enter CVV">
+        <div *ngIf="checkoutForm.get('CVV')?.errors && checkoutForm.get('CVV')?.dirty" class="text-danger">   
+          <div *ngIf="checkoutForm.get('CVV')?.hasError('required')">CVV is required.</div>
+          <div *ngIf="checkoutForm.get('CVV')?.hasError('invalidCVV')">Please enter a valid CVV.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" formControlName="address" id="address">
+      </div>
+      <div class="form-group">
+        <label for="phoneNo">Phone Number:</label>
+        <input type="text" class="form-control" formControlName="phoneNo" id="phoneNo">
+      </div>
+      <!-- <div class="form-group">
+        <label for="totalCartValue">Total Cart Value:</label>
+        <input  class="total-cart-value" formControlName="totalCartValue" id="₹{{ totalCartValue }}">
+      </div> -->
+
+<div class="form-group">
+        <label for="totalCartValue">Total Price:</label>
+        <input type="text" id="totalPrice" name="totalPrice" value="₹{{ totalCartValue }}" disabled>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+    </form>
+  </div>
+  
+
