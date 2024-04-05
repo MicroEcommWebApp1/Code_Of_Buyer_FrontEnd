@@ -1,6 +1,6 @@
 export class CartDto {
     constructor(
-         public cart_id: number,
+         public cartId: number,
         public productId: number,
         public name: string,
         public email: string,

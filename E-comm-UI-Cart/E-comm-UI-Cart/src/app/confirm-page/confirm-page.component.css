@@ -1,0 +1,28 @@
+/* confirm-page.component.css */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .payments, .cart-details {
+    width: 45%;
+  }
+  
+  .payment, .cart {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .payment hr, .cart hr {
+    border: 0.5px solid #ccc;
+  }
+  
+  .product-thumbnail {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+  }
+  

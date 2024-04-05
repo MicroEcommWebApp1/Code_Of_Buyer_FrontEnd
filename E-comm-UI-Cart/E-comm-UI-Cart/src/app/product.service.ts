@@ -11,8 +11,8 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
 
-  public getProductById(product_id:any){
-    return this.http.get<Product>(`http://localhost:8082/products/getProductDetailsById/${product_id}`);
+  public getProductById(productId:any){
+    return this.http.get<Product>(`http://localhost:8082/products/getProductDetailsById/${productId}`);
   }
   public getAllProducts(){
     return this.http.get<Product[]>("http://localhost:8082/products/getAllProducts");

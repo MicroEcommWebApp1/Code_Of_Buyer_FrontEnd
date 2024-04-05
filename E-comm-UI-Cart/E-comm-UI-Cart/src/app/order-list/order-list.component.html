@@ -1,0 +1,22 @@
+<app-buyernavbar></app-buyernavbar>
+<div *ngFor="let order of orders" class="order-container">
+    <div>
+      <p><strong>Order ID:</strong> {{ order.orderId }}</p>
+      <p><strong>Payment ID:</strong> {{ order.paymentId }}</p>
+      <p><strong>Buyer Name:</strong> {{ order.buyerName }}</p>
+      <p><strong>Email:</strong> {{ order.email }}</p>
+      <p><strong>Address:</strong> {{ order.address }}</p>
+      <p><strong>Phone No:</strong> {{ order.phoneNo }}</p>
+      <p><strong>Product Name:</strong> {{ order.productName }}</p>
+      <p><strong>Description:</strong> {{ order.description }}</p>
+      <img *ngIf="order.thumbnail" [src]="order.thumbnail" alt="Product Thumbnail" class="product-thumbnail">
+      <p><strong>Price:</strong> {{ order.price }}</p>
+      <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+      <p><strong>Category:</strong> {{ order.category }}</p>
+      <p><strong>Subcategory 1:</strong> {{ order.subcategory1 }}</p>
+      <p><strong>Subcategory 2:</strong> {{ order.subcategory2 }}</p>
+      <p><strong>Total Amount:</strong> {{ order.totalAmount }}</p>
+      <p><strong>Status:</strong> {{ order.status }}</p>
+    </div>
+    <hr class="hr-divider">
+</div>

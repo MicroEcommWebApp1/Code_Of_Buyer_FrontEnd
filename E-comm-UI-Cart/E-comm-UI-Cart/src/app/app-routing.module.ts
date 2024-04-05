@@ -13,6 +13,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
+import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,11 +25,13 @@ const routes: Routes = [
   { path: 'mainpage', component: MainpageComponent },
   {path: 'cart', component: CartComponent},
   { path: 'buyer-dash', component: BuyerDashComponent },
-  { path: 'productdetail/:product_id',component:ProductDetailComponent},
+  { path: 'productdetail/:productId',component:ProductDetailComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent },
   {path:'checkout',component:CheckoutComponent},
   {path:'editprofile',component:EditprofileComponent},
   {path:'shop',component:ShopComponent},
+  {path: 'confirm-page', component: ConfirmPageComponent},
+  {path: 'order-list', component: OrderListComponent},
   { path: '**', redirectTo: '/home' }
 ];
 

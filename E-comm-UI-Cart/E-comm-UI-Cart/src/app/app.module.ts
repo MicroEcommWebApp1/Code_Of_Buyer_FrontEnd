@@ -25,6 +25,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ShopComponent } from './shop/shop.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
+import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 
 
@@ -53,7 +55,9 @@ const routes: Routes = [
          BuyernavbarComponent ,
          NavbarComponent,
          ShopComponent,
-         CartComponent
+         CartComponent,
+         ConfirmPageComponent,
+         OrderListComponent
   ],
   
  

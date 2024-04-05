@@ -9,13 +9,14 @@ import Swal from 'sweetalert2';
 
 
 function cardNumberValidator(control: AbstractControl): ValidationErrors | null {
-  const validCardNumber = 8688965686;
-  const enteredCardNumber = parseInt(control.value, 10);
-  if (enteredCardNumber !== validCardNumber) {
+  const validCardNumber = 868896568686889;
+  const enteredCardNumber = control.value.replace(/-/g, ''); // Remove dashes before validation
+  if (enteredCardNumber.length !== 15 || parseInt(enteredCardNumber) !== validCardNumber) {
     return { invalidCardNumber: true };
   }
   return null;
 }
+
 
 function CVVValidator(control: AbstractControl): ValidationErrors | null {
   const validCVVNumber = 152;
@@ -38,6 +39,11 @@ function CVVValidator(control: AbstractControl): ValidationErrors | null {
 export class CheckoutComponent implements OnInit{
   checkoutForm!: FormGroup ;
  
+  formatCardNumber(event: any): void {
+    const input = event.target.value.replace(/\D/g, ''); // Remove non-numeric characters
+    const cardNumber = input.replace(/(.{4})/g, '$1-'); // Add a dash every 4 characters
+    this.checkoutForm.patchValue({ cardNumber }); // Update the form value
+  }
 
 
   months: string[] = [
@@ -89,6 +95,7 @@ ngOnInit() {
     address: ['', Validators.required],
     phoneNo: ['', Validators.required],
     
+    
   });
 
 
@@ -135,7 +142,7 @@ onSubmit(): void {
             text: "Payment Done.",
             icon: "success"
           });
-          this.router.navigate(['/buyer-dash']); }
+          this.router.navigate(['/confirm-page']); }
       });
      
     },

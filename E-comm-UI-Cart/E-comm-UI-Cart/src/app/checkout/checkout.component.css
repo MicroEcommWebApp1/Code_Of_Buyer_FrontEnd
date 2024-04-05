@@ -1,126 +1,86 @@
-img{
-    height:53px;
-    width:auto;
-  }
-  nav {
-    background-color:#031728;
-    color: #fff;
-    padding: 10px 0;
-    margin-bottom: 20px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  .search-bar {
-    display: inline-block;
-  }
-  
-  .search-bar input {
-    padding: 5px;
-  }
-  
-  .cart-button{
-    background-color: #031728;
-    color: #fff;
-    border-radius: 5px;
-  }
-  .navbar-center {
-    display: flex;
-    align-items: center; /* Vertically center items */
-  }
-  
-  .form-control {
-    flex: 1; /* Take remaining space */
-    margin-right: 10px; 
-    
-  }
-  .btn-outline-success {
-    background-color: white; /* Set background color to white */
-    color: black; /* Set text color to black */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-.btn-outline-success:hover {
-  background-color: #9dffd9; /* Change background color on hover */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-  
-  .background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqvhjvqJYaqPxAL8eyw1blT26XRIf5T_6S9A&usqp=CAU');
-    background-size: cover; 
-    filter: blur(5px); 
-  }
 
-  .checkout-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .checkout-form h2 {
-    margin-top: 0;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="tel"],
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .form-group textarea {
-    resize: vertical;
-  }
-  
-  .expiry-date {
-    display: flex;
-  }
-  
-  .expiry-date select {
-    flex: 1;
-    margin-right: 5px;
-  }
-  
-  .proceed-to-payment-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .proceed-to-payment-button:hover {
-    background-color: #0056b3;
-  }
-  
+h2 {
+  text-align: center;
+}
 
-  
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:disabled {
+  background-color: #f4f4f4;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.highlight {
+  background-color: #f0f8ff; /* Light blue background */
+  border: 1px solid #87ceeb; /* Light blue border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px; /* Additional padding */
+}
+.expiry-date {
+  display: flex;
+}
+
+.expiry-month,
+.expiry-year {
+  flex: 2; 
+  margin-right: 10px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 30px auto;
+  }
+}

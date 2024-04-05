@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
   
 
   // deleteCartItem(index: number) {
-  //   const productIdToDelete = this.cartItems[index].product_id;
+  //   const productIdToDelete = this.cartItems[index].productId;
   //   this.cartService.deleteShoppingCart(this.buyerDto.email, productIdToDelete).subscribe(
   //     response => {
   //       // Refresh cart items after deletion
@@ -79,7 +79,8 @@ export class CartComponent implements OnInit {
   }
 
   deleteCartItem(index: number) {
-    const productIdToDelete = this.cartItems[index].product_id;
+    const productIdToDelete = this.cartItems[index].productId;
+  if (productIdToDelete) {
     this.cartService.deleteShoppingCart(this.buyerDto.email, productIdToDelete).subscribe(
       response => {
         // If deletion is successful, remove the item from cartItems array
@@ -89,7 +90,10 @@ export class CartComponent implements OnInit {
         console.error('Error deleting item from cart:', error);
       }
     );
+  } else {
+    console.error('Error: productId is null');
   }
+}
 
   decrementQuantity(item: Product) {
     if (item.quantity > 1) {
@@ -112,9 +116,9 @@ export class CartComponent implements OnInit {
     const cartDtoArray: CartDto[] = this.cartItems.map(item => {
       const totalPrice = item.price * item.quantity;
       const cartDto: CartDto = {
-        productId: item.product_id,
+        productId: item.productId,
         quantity: item.quantity,
-        cart_id: 0,
+        cartId: 0,
         name: '',
         email: '',
         description: '',

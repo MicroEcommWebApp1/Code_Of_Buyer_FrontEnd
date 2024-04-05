@@ -74,7 +74,7 @@ products: Product[] = [];
 
     addToCart(item: Product) {
       const cartItem = {
-        product_id: item.product_id,
+        productId: item.productId,
         name: item.name,
         email: this.buyerDto.email,
         description: item.description,

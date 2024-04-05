@@ -1,0 +1,40 @@
+<!-- confirm-page.component.html -->
+<app-buyernavbar></app-buyernavbar>
+<div class="container">
+    <div *ngIf="lastPayment">
+        <!-- <h2>Payments</h2>
+        <p><strong>Payment ID:</strong> {{ lastPayment.paymentId }}</p>
+        <p><strong>Name:</strong> {{ lastPayment.name }}</p>
+        <p><strong>Email:</strong> {{ lastPayment.email }}</p>
+        <p><strong>Address:</strong> {{ lastPayment.address }}</p>
+        <p><strong>Phone No:</strong> {{ lastPayment.phoneNo }}</p>
+        <p><strong>Total Cart Value:</strong> {{ lastPayment.totalCartValue }}</p>
+        <hr> -->
+    </div>
+</div>
+
+<div class="container">
+    <div class="cart-details">
+        <h2>Cart Details</h2>
+        <div *ngFor="let cart of carts; let i = index" class="cart">
+            <p><strong>Payment ID:</strong> {{ lastPayment.paymentId }}</p>
+            <p><strong>Name:</strong> {{ lastPayment.name }}</p>
+            <p><strong>Email:</strong> {{ lastPayment.email }}</p>
+            <p><strong>Address:</strong> {{ lastPayment.address }}</p>
+            <p><strong>Phone No:</strong> {{ lastPayment.phoneNo }}</p>
+            <p><strong>Total Cart Value:</strong> {{ lastPayment.totalCartValue }}</p>
+            <p><strong>Cart ID:</strong> {{ cart.cartId }}</p>
+            <p><strong>Product Name:</strong> {{ cart.name }}</p>
+            <img [src]="cart.thumbnail" alt="Product Thumbnail" class="product-thumbnail">
+            <p><strong>Price:</strong> {{ cart.price }}</p>
+            <p><strong>Quantity:</strong> {{ cart.quantity }}</p>
+            <p><strong>Total Product Price:</strong> {{ cart.totalproductPrice }}</p>
+            <div class="container">
+                <button (click)="confirmOrder(i)" class="btn btn-primary">Confirm Order</button>
+            </div>
+            <hr>
+            
+        </div>
+       
+    </div>
+</div>

@@ -53,12 +53,22 @@ export class CartService {
       );
   }
 
-  deleteShoppingCart(email: string, productId: number): Observable<any> {
+  deleteShoppingCart(email: string, productId: number| null): Observable<any> {
+  //   return this.http.delete<any>(`${this.baseUrl}/delcart/${email}/${productId}`)
+  //     .pipe(
+  //       catchError(this.handleError)
+  //     );  
+  // }
+
+  if (productId !== null) {
     return this.http.delete<any>(`${this.baseUrl}/delcart/${email}/${productId}`)
       .pipe(
         catchError(this.handleError)
-      );  
+      );
+  } else {
+    return throwError('productId is null');
   }
+}
 
   private handleError(error: any) {
     console.error('An error occurred:', error);
